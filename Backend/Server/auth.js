@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 require('../Database/Conn')
 const Sign=require('../Schema/Signup_schema')
-const Car=require('../Schema/Signup_schema')
+const Car=require('../Schema/Rent_form')
 const app=express()
 
 const { json } = require('express')
@@ -27,12 +27,17 @@ router.post("/car",(req,res)=>{
     }
     else{ 
         const car=new Car({owner_name,vehicle_name,vehicle_no, start_time,end_time,rent,address})
+        Sign.findOne({name:owner_name,function(err,found){
+            found.carform.push(car);
+            found.save();
+            }
+            })
+            
+          
         car.save().then(()=>{
             res.status(201).json({message:"data stored successfully"})
         }).catch((err)=>{res.status(500).json({err:"unable to store data"})})
-        // const form = Sign.findOne({name:owner_name}).carform.push(car)
-        // form.save().then(()=>{res.json({message:"form saved"})}).catch((err)=>{res.json({err:"form not saved"})})
-      
+        
     }
 
 })
@@ -56,7 +61,7 @@ router.post("/signup",(req,res)=>{
         if(password!=cpassword){
             return res.status(425).json({error:"check the password"})
         }else{
-            const sign= new Sign({name,address,age,gender,occupation,phone,gmail,adhar})
+            const sign= new Sign({name,address,age,gender,occupation,phone,gmail,adhar,})
 
             sign.save().then(()=>{
                 res.status(201).json({ messsage: "saved successfully" })
