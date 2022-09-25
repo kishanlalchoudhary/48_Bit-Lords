@@ -134,10 +134,6 @@ router.get("/bike",async(req,res)=>{
 })
 
 
-// router.get("/home",authenticate,(req,res)=>{
-//     res.send(req.rootuser)
-// })
-
 
 
 
