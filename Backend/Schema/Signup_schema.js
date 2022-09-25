@@ -1,7 +1,8 @@
 const mongoose=require('mongoose')
 
+const jwt=require("jsonwebtoken")// for  authentication and  storing the token generated after login
 
-
+const bcrypt=require("bcrypt")  // to hash password
 
 
 const signupSchema= new mongoose.Schema({
@@ -50,10 +51,47 @@ const signupSchema= new mongoose.Schema({
     }],
     book_car:[
         {type:Array}
+    ],
+    tokens:[
+       { token:{
+            type:String,
+            require:true}
+        }
     ]
 
 
 })
+
+
+
+signupSchema.pre('save',async function(next){
+    if(this.isModified('password')){
+        this.password=await bcrypt.hash(this.password,13)
+        this.cpassword=await bcrypt.hash(this.cpassword,13)
+        next()
+    }
+})
+
+
+
+signupSchema.methods.generateToken= async function(){
+    try{
+        let token =jwt.sign(_id=this.id.toString(),"adityamahajanfromreaaaaa"
+        )
+        this.tokens= this.tokens.concat({token:token})
+        await this.save()
+
+        return token;
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+
+
+
+
 
 
 const Sign=mongoose.model("SIGN",signupSchema)

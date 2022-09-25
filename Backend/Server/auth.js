@@ -10,7 +10,11 @@ const { model } = require('mongoose')
 const { castObject } = require('../Schema/Signup_schema')
 
 
+const bcrypt = require("bcrypt")
 
+
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
 
 
 
@@ -61,7 +65,7 @@ router.post("/signup",(req,res)=>{
         if(password!=cpassword){
             return res.status(425).json({error:"check the password"})
         }else{
-            const sign= new Sign({name,address,age,gender,occupation,phone,gmail,adhar,})
+            const sign= new Sign({name,address,age,gender,occupation,phone,gmail,adhar,password,cpassword})
 
             sign.save().then(()=>{
                 res.status(201).json({ messsage: "saved successfully" })
@@ -76,6 +80,50 @@ router.post("/signup",(req,res)=>{
     }
 )
 
+
+
+router.post("/login",async(req,res)=>{
+    try {
+        const {gmail,password}=req.body
+        console.log(req.body)
+
+
+        if(!gmail||!password){
+            return res.status(422).json({ error: "Fill the data first" })
+
+        }
+        else{
+            const user= await Sign.findOne({gmail:gmail})
+            console.log(user)
+            if(user){
+
+
+
+               // compering the hashed  message using bcrypt
+               const passMatch=await bcrypt.compare(password,user.password)
+
+
+                // token generator for authentication of user (generate token function callling)
+                // let token =await user.generateToken()
+                // console.log(token)
+                // res.cookie("jwt_login",token,{
+                //     expires: new Date(Date.now() + 254890000), httpOnly: true   // just see this meaning 
+                // })
+
+                if(passMatch){
+                    res.json({message:"login successfully"})
+                }else{
+                    res.status(400).json({err:"invalid cradentials"})
+                }
+            }else{
+                    res.status(401).json({ error: "Invalid cradentials" })
+        
+                 }
+        }
+    }catch(err){
+        console.log(err)
+    }
+})
 
 
 

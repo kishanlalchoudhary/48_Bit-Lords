@@ -2,6 +2,9 @@ const express=require("express")
 const app=express()
 require('./Database/Conn')
 app.use(express.json())
+const cookieParser =require('cookie-parser')
+
+app.use(cookieParser())
 
 app.use(require("./Server/auth"))
 
