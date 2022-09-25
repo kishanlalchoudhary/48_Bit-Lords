@@ -7,7 +7,9 @@ function Mainpage() {
       <h1>main page</h1>
       <Link to={'/home'}>Home</Link>
       <Link to={'/bike'}>Bike</Link>
-      <Link to={'/login'}>Login</Link>
+      <Link to={'/log'}>Login</Link>
+      <Link to={'/signup'}>Signup</Link>
+
 
 
 

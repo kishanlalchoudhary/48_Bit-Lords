@@ -10,8 +10,10 @@ import {
   Link
 } from "react-router-dom";
 import Login from './Components/Login';
+import Signup from './Components/Signup';
 
 function App() {
+  
   return (
    <>
    <Router>   
@@ -19,7 +21,9 @@ function App() {
     <Route path='/mainpage' element={<Mainpage/>}/>
     <Route path='/home' element={<Home/>}/>
     <Route path='/bike' element={<Bike/>}/>
-    <Route path='/login' element={<Login/>}/>
+    <Route path='/log' element={<Login/>}/>
+    <Route path='/sign' element={<Signup/>}/>
+
 
 
    </Routes>

@@ -4,7 +4,7 @@ import {Link, useNavigate} from 'react-router-dom'
 function Login() {
    const [login ,setlogin]=useState("Login")
     let [user,setuser]=useState({
-        email:"",
+        gmail:"",
         password:""
       })
     
@@ -22,7 +22,7 @@ function Login() {
   }
   const fetchdata= async(e)=>{
     e.preventDefault()
-    const { email,password}=user
+    const { gmail,password}=user
    const res=await fetch('/login',{
     method:'POST',
     headers:{
@@ -30,7 +30,7 @@ function Login() {
     }
     ,
     body:JSON.stringify({
-      email,password
+      gmail,password
     })
   
    });
@@ -45,7 +45,7 @@ function Login() {
    else{
     window.alert("Login successfully")
     setlogin("Log Out")
-    nevigate("/cart")
+    nevigate("/home")
     
   
    
@@ -59,7 +59,7 @@ function Login() {
       
       <div class="input-group mb-3">
       <span class="input-group-text">Email Address</span>
-        <input type="email" name='email' value={user.email} onChange={ inputHandel} width={5}  placeholder="Email"  />
+        <input type="email" name='gmail' value={user.gmail} onChange={ inputHandel} width={5}  placeholder="Email"  />
        
       </div>
      <div class="input-group mb-3">

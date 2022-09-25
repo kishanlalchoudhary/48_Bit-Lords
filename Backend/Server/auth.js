@@ -4,7 +4,7 @@ require('../Database/Conn')
 const Sign=require('../Schema/Signup_schema')
 const Car=require('../Schema/Rent_form')
 const app=express()
-
+const authenticate=require('../Authenticate/authenticate')
 const { json } = require('express')
 const { model } = require('mongoose')
 const { castObject, bulkWrite } = require('../Schema/Signup_schema')
@@ -88,7 +88,7 @@ router.post("/login",async(req,res)=>{
         console.log(req.body)
 
 
-        if(!gmail||!password){
+        if(!gmail || !password){
             return res.status(422).json({ error: "Fill the data first" })
 
         }
@@ -104,11 +104,12 @@ router.post("/login",async(req,res)=>{
 
 
                 // token generator for authentication of user (generate token function callling)
-                // let token =await user.generateToken()
-                // console.log(token)
-                // res.cookie("jwt_login",token,{
-                //     expires: new Date(Date.now() + 254890000), httpOnly: true   // just see this meaning 
-                // })
+                let token =await user.generateToken()
+                console.log(token)
+                res.cookie("jwt_token",token,{
+                    expires: new Date(Date.now() + 254890000), httpOnly: true   // just see this meaning 
+                })
+                
 
                 if(passMatch){
                     res.json({message:"login successfully"})
@@ -132,6 +133,10 @@ router.get("/bike",async(req,res)=>{
         res.json(bike)
 })
 
+
+// router.get("/home",authenticate,(req,res)=>{
+//     res.send(req.rootuser)
+// })
 
 
 
