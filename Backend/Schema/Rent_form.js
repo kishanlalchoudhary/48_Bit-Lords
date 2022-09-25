@@ -32,7 +32,7 @@ const lenderSchema = new mongoose.Schema({
     },
   });
 
-  const Car=mongoose.model("CARFORM",signupSchema)
+  const Car=mongoose.model("CARFORM",lenderSchema )
 
 
 module.exports=Car;
