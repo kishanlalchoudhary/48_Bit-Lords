@@ -1,5 +1,5 @@
 const mongoose=require('mongoose')
-
+const Car=require('./Rent_form')
 const signupSchema= new mongoose.Schema({
    name:{
         type:String,
@@ -40,7 +40,9 @@ const signupSchema= new mongoose.Schema({
     cpassword:{
         type:String,
         require:true
-    }
+    },
+     carform:[Car],
+     
 
 })
 
