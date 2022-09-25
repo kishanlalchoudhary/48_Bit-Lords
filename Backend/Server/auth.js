@@ -7,7 +7,7 @@ const app=express()
 
 const { json } = require('express')
 const { model } = require('mongoose')
-const { castObject } = require('../Schema/Signup_schema')
+const { castObject, bulkWrite } = require('../Schema/Signup_schema')
 
 
 const bcrypt = require("bcrypt")
@@ -124,6 +124,17 @@ router.post("/login",async(req,res)=>{
         console.log(err)
     }
 })
+
+
+router.get("/bike",async(req,res)=>{
+    const bike= await Car.find({ vehicle_name:"Bike"})
+        console.log(bike)
+        res.json(bike)
+})
+
+
+
+
 
 
 
