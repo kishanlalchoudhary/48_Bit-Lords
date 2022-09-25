@@ -5,7 +5,7 @@ app.use(express.json())
 const cookieParser =require('cookie-parser')
 
 app.use(cookieParser())
-
+app.use(express.json())
 app.use(require("./Server/auth"))
 
 app.get("/",(req,res)=>{res.send("this is first srever page")})
