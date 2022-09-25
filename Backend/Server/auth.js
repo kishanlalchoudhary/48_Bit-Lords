@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 require('../Database/Conn')
 const Sign=require('../Schema/Signup_schema')
+const Car=require('../Schema/Signup_schema')
 const app=express()
 
 const { json } = require('express')
@@ -10,6 +11,31 @@ const { castObject } = require('../Schema/Signup_schema')
 
 
 
+
+
+
+
+
+// car form filling from owner /car url
+
+router.post("/car",(req,res)=>{
+    console.log(req.body)
+    console.log("Car details")
+    const {owner_name,vehicle_name,vehicle_no, start_time,end_time,rent,address}=req.body;
+    if(!owner_name||!vehicle_name||!start_time||!vehicle_no||!end_time||!rent||!address){
+        res.status(422).json({err:"fill the data first"})
+    }
+    else{ 
+        const car=new Car({owner_name,vehicle_name,vehicle_no, start_time,end_time,rent,address})
+        car.save().then(()=>{
+            res.status(201).json({message:"data stored successfully"})
+        }).catch((err)=>{res.status(500).json({err:"unable to store data"})})
+        // const form = Sign.findOne({name:owner_name}).carform.push(car)
+        // form.save().then(()=>{res.json({message:"form saved"})}).catch((err)=>{res.json({err:"form not saved"})})
+      
+    }
+
+})
 
 
 // regestration of user in the /Signup url
@@ -31,6 +57,7 @@ router.post("/signup",(req,res)=>{
             return res.status(425).json({error:"check the password"})
         }else{
             const sign= new Sign({name,address,age,gender,occupation,phone,gmail,adhar})
+
             sign.save().then(()=>{
                 res.status(201).json({ messsage: "saved successfully" })
             })
