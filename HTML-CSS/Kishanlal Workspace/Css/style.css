@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Landing page css starts */
+
+.landing-page{
+    background-color: #c0c0c0;
+    height: 100vh;
+}
+
+.landing-main{
+    height: 100vh;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing-logo{
+    width: 20%;
+}
+
+#button-color{
+    background-color: #ff5958;
+    color: white;
+}
+
+.landing-content{
+    border: none;
+}
+
+.landing-content h1{
+    font-size: 50px;
+    color: #8d021e;
+}
+
+.landing-content p{
+    font-size: 25px;
+    color: #FF5958;
+    font-weight: 450;
+}
+
+.landing-image img{
+    width: 100%;
+}
+
+/* Landing page css ends */
