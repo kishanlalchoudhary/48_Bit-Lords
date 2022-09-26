@@ -54,7 +54,7 @@ router.post("/signup",uplode.single('image'),(req,res)=>{
     console.log("signup  page")
 
     const { name,address,age,gender,occupation,phone,gmail,adhar,password,cpassword}=req.body;
-   
+    
 
     if(!name || !address ||!age || !gender ||!occupation ||!phone||!gmail||!adhar||!password||!cpassword){
         return res.status(422).json({error:"fill the data first"})}
