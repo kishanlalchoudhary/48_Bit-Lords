@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function Nev() {
   return (
     <div>
@@ -32,10 +32,9 @@ function Nev() {
                                   Vehicle
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a className="dropdown-item" href="#">Bicycle</a></li>
-                                    <li><a className="dropdown-item" href="#">Scooter</a></li>
-                                    <li><a className="dropdown-item" href="#">Bike</a></li>
-                                    <li><a className="dropdown-item" href="#">Car</a></li>
+                                    <li><Link className="dropdown-item" to="/bicycle">Bicycle</Link></li>
+                                    <li><Link className="dropdown-item" to="/bike">Bike</Link></li>
+                                    <li><Link className="dropdown-item" to="/car">Car</Link></li>
                                 </ul>
                             </li>
                         </ul>
