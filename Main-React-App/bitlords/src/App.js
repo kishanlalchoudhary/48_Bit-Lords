@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import './responsive.css';
 import './style.css';
@@ -16,6 +15,7 @@ import Signup from './Components/Signup';
 import Bicycle from './Components/Bicycle';
 import Car from './Components/Car';
 import Carform from './Components/Carform';
+import Nev from './Components/Nev';
 
 function App() {
   
@@ -28,16 +28,12 @@ function App() {
     <Route path='/bike' element={<Bike/>}/>
     <Route path='/bicycle' element={<Bicycle/>}/>
     <Route path='/car' element={<Car/>}/>
-
-
     <Route path='/log' element={<Login/>}/>
     <Route path='/sign' element={<Signup/>}/>
-
     <Route path='/carform' element={<Carform/>}/>
-
-
    </Routes>
    </Router>
+   <Nev></Nev>
    </>
   );
 }
