@@ -20,8 +20,8 @@ function Mainpage() {
                 <div className="col-12 landing-nav">
                     <img src="/logo.png" className="landing-logo" alt="" />
                     <div className="landing-btn">
-                        <a className="btn" id="button-color" href="#" role="button">Login</a>
-                        <a className="btn" id="button-color" href="#" role="button">Signup</a>
+                        <Link className="btn" id="button-color" to="/log" role="button">Login</Link>
+                        <Link className="btn" id="button-color" to="/sign" role="button">Signup</Link>
                     </div>
                 </div>
                 <div className="col-lg-5 col-12 landing-content">
