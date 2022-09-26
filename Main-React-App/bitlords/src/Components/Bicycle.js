@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState ,useEffect} from 'react'
+import Nev from './Nev'
 
 function Bicycle() {
     const [Bicycle ,setBicycle]=useState([])
@@ -17,6 +18,7 @@ function Bicycle() {
       }, [])
   return (
     <div>
+      <Nev></Nev> 
       {
         Bicycle.map((item)=>(
             <div>

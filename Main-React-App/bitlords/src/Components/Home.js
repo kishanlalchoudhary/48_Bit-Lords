@@ -1,6 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Nev from './Nev'
+
+
 function Home() {
     const nevigate= useNavigate()
     const [userData, setuserData] = useState({})
@@ -36,6 +39,7 @@ function Home() {
   }, [])
   return (
     <div>
+      <Nev></Nev> 
       <h1>home</h1>
     <h1>{userData.name}</h1>
     </div>

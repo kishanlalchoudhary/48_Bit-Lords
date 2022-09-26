@@ -14,6 +14,7 @@ const bcrypt = require("bcrypt")
 
 
 const cookieParser = require('cookie-parser')
+const { find } = require('../Schema/Rent_form')
 app.use(cookieParser())
 
 
@@ -52,11 +53,11 @@ router.post("/car",(req,res)=>{
 router.post("/signup",uplode.single('image'),(req,res)=>{
     console.log(req.body)
     console.log("signup  page")
-console.log(req.image)
+
     const { name,address,age,gender,occupation,phone,gmail,adhar,password,cpassword}=req.body;
     
 
-    if(!name || !address ||!age || !gender ||!occupation ||!phone||!gmail||!adhar||!password||!cpassword){
+    if(!name || !address ||!age||!occupation ||!phone||!gmail||!adhar||!password||!cpassword){
         return res.status(422).json({error:"fill the data first"})}
     
     Sign.findOne({gmail:gmail}).then((user)=>{

@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
-
+import Nev from './Nev'
 
 function Carform() {
 
@@ -59,6 +59,7 @@ function Carform() {
     
   return (
     <div>
+      <Nev></Nev> 
         <h1>car form</h1>
        <form  method='POST'>
       <div class="input-group mb-3">

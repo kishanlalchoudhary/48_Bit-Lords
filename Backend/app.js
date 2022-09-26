@@ -11,5 +11,5 @@ app.use('/Uplode',express.static('Uplode'))
 app.get("/",(req,res)=>{res.send("this is first srever page")})
 
 
-app.listen(5000,()=>{console.log("server is running at port number 5000")})
+app.listen(5001,()=>{console.log("server is running at port number 5000")})
 

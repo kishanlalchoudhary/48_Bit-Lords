@@ -2,7 +2,7 @@ import React from 'react'
 import {useState ,useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {add} from '../Components/store/Cartslice'
-
+import Nev from './Nev'
 
 function Car() {
   const dispatch=useDispatch()
@@ -26,7 +26,10 @@ function Car() {
 
 
       const del=(item)=>{
-        setitem_id({...item_id,id:item._id})
+
+        dispatch(add(item))
+
+        setitem_id({item_id,id:item._id})
           const {id}=item_id
          console.log({...item_id})
          const res= fetch('/cardel',{
@@ -42,13 +45,14 @@ function Car() {
          
           })
          
-              dispatch(add(...item))
+            
       }
          
        
       
   return (
     <div>
+      <Nev></Nev> 
       {
         Car.map((item)=>(
             <div>
