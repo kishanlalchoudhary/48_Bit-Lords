@@ -6,7 +6,7 @@ function Home() {
     const [userData, setuserData] = useState({})
   const callAboutPage = async () => {
     try {
-      const res = await fetch("/cart", {
+      const res = await fetch("/home", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -26,7 +26,7 @@ function Home() {
     } catch (err) {
       console.log(err)
       console.log("this is catch")
-      nevigate('/login', { replace: true })
+      nevigate('/log', { replace: true })
     }
   }
 
@@ -36,6 +36,7 @@ function Home() {
   }, [])
   return (
     <div>
+      <h1>home</h1>
     <h1>{userData.name}</h1>
     </div>
   )

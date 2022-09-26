@@ -20,7 +20,7 @@ function Bike() {
       {
         bike.map((item)=>(
             <div>
-            <h1>{item.name}</h1>
+            <h1>{item.owner_name}</h1>
             <h2>{item.vehicle_name}</h2>
            </div>
         ))

@@ -10,16 +10,19 @@ function Signup() {
     const [worn ,setworn]=useState('*')
     const nevigate=useNavigate();
   let [User,setUser]=useState({
-    name:"",gmail:"",phone:"",password:"",cpassword:"",address:"",age:"",gender:"",occupation:"",adhar:""
+    name:"",gmail:"",phone:"",password:"",cpassword:"",address:"",age:"",gender:"",occupation:"",adhar:"",image:""
   })
   
   
   
-  let name , value
+  let name , value,image
     const  inputHandel =(e)=>{
       console.log(User)
       name=e.target.name;
+     
+
       value=e.target.value;
+      
     
     
       setUser({...User,[name]:value})
@@ -29,7 +32,7 @@ function Signup() {
   
   const fetchdata= async(e)=>{
     e.preventDefault()
-    const {  name,address,age,gender,occupation,phone,gmail,adhar,password,cpassword}=User
+    const {  name,address,age,gender,occupation,phone,gmail,adhar,password,cpassword,image}=User
    const res=await fetch('/signup',{
     method:'POST',
     headers:{
@@ -37,7 +40,7 @@ function Signup() {
     }
     ,
     body:JSON.stringify({
-      name,gmail,phone,password,cpassword,gender,age,adhar,occupation,address
+      name,gmail,phone,password,cpassword,gender,age,adhar,occupation,address,image
     })
   
    });
@@ -79,6 +82,11 @@ function Signup() {
       <div class="input-group mb-3">
       <span class="input-group-text">Email Address</span>
         <input type="email" name='gmail' value={value} onChange={inputHandel} width={5}  placeholder="Email"  />
+       
+      </div>
+      <div class="input-group mb-3">
+      <span class="input-group-text">Email Address</span>
+        <input type="file" name='image' value={value} onChange={inputHandel} width={5}   />
        
       </div>
 

@@ -58,6 +58,10 @@ const signupSchema= new mongoose.Schema({
             require:true}
         }
     ]
+    ,
+    image:{
+        type:String
+    }
 
 
 })
