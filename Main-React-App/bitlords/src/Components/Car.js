@@ -4,7 +4,7 @@ import {useState ,useEffect} from 'react'
 function Car() {
     const [Car ,setCar]=useState([])
     const FetchData = async () => {
-        const res = await fetch("/car", {
+        const res = await fetch("/carshow", {
           method: 'GET'
         })
         const data = await res.json()

@@ -142,7 +142,7 @@ router.get("/bicycle",async(req,res)=>{
 
 
 
-router.get("/car",async(req,res)=>{
+router.get("/carshow",async(req,res)=>{
     const bike= await Car.find({ vehicle_name:"Car"})
         console.log(bike)
         res.json(bike)

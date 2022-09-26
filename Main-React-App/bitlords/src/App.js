@@ -13,6 +13,7 @@ import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Bicycle from './Components/Bicycle';
 import Car from './Components/Car';
+import Carform from './Components/Carform';
 
 function App() {
   
@@ -30,6 +31,7 @@ function App() {
     <Route path='/log' element={<Login/>}/>
     <Route path='/sign' element={<Signup/>}/>
 
+    <Route path='/carform' element={<Carform/>}/>
 
 
    </Routes>

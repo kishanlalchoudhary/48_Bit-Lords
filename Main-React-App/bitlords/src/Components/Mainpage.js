@@ -9,6 +9,8 @@ function Mainpage() {
       <Link to={'/bike'}>Bike</Link>
       <Link to={'/log'}>Login</Link>
       <Link to={'/signup'}>Signup</Link>
+      <Link to={'/carform'}>Car Form</Link>
+
 
 
 
