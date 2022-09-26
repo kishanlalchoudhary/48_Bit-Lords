@@ -21,7 +21,8 @@ function App() {
   
   return (
    <>
-   <Router>   
+   <Router>  
+   <Nev></Nev> 
    <Routes>
     <Route path='/' element={<Mainpage/>}/>
     <Route path='/home' element={<Home/>}/>
@@ -33,7 +34,7 @@ function App() {
     <Route path='/carform' element={<Carform/>}/>
    </Routes>
    </Router>
-   <Nev></Nev>
+   
    </>
   );
 }

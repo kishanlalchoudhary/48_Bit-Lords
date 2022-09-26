@@ -10,18 +10,20 @@ function Signup() {
     const [worn ,setworn]=useState('*')
     const nevigate=useNavigate();
   let [User,setUser]=useState({
-    name:"",gmail:"",phone:"",password:"",cpassword:"",address:"",age:"",gender:"",occupation:"",adhar:"",image:""
+    name:"",gmail:"",phone:"",password:"",cpassword:"",address:"",age:"",gender:"",occupation:"",adhar:"",
   })
   
   
   
-  let name , value,image
+  let name , value
     const  inputHandel =(e)=>{
       console.log(User)
       name=e.target.name;
      
+        value=e.target.value;
+      
 
-      value=e.target.value;
+      
       
     
     
@@ -39,9 +41,11 @@ function Signup() {
       "Content-type":"application/json"
     }
     ,
+    
     body:JSON.stringify({
       name,gmail,phone,password,cpassword,gender,age,adhar,occupation,address,image
-    })
+    }),
+    image:image
   
    });
    const  data= await res.json();
@@ -83,12 +87,7 @@ function Signup() {
       <span class="input-group-text">Email Address</span>
         <input type="email" name='gmail' value={value} onChange={inputHandel} width={5}  placeholder="Email"  />
        
-      </div>
-      <div class="input-group mb-3">
-      <span class="input-group-text">Email Address</span>
-        <input type="file" name='image' value={value} onChange={inputHandel} width={5}   />
-       
-      </div>
+    </div>
 
      
       <div class="input-group mb-3">

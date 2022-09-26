@@ -52,7 +52,7 @@ router.post("/car",(req,res)=>{
 router.post("/signup",uplode.single('image'),(req,res)=>{
     console.log(req.body)
     console.log("signup  page")
-
+console.log(req.image)
     const { name,address,age,gender,occupation,phone,gmail,adhar,password,cpassword}=req.body;
     
 
@@ -148,7 +148,7 @@ router.get("/bicycle",async(req,res)=>{
 
 router.get("/carshow",async(req,res)=>{
     const bike= await Car.find({ vehicle_name:"Car"})
-        console.log(bike)
+       
         res.json(bike)
 })
 
@@ -158,6 +158,21 @@ router.get('/home',authenticate,(req,res)=>{
     res.send(req.rootUser)
 })
 
+router.post("/cardel",async(req,res)=>{
+   const {id} =req.body
+    console.log(req.body)
+    console.log(id)
+   Car.findByIdAndRemove(id, (err)=>{
+        if(!err){
+            console.log("deleted")
+            
+        }else{
+            console.log(err)
+        }
+    }
+    )
+   
+})
 
 
 
