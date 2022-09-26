@@ -134,7 +134,25 @@ router.get("/bike",async(req,res)=>{
 })
 
 
+router.get("/bicycle",async(req,res)=>{
+    const bike= await Car.find({ vehicle_name:"Bicycle"})
+        console.log(bike)
+        res.json(bike)
+})
 
+
+
+router.get("/car",async(req,res)=>{
+    const bike= await Car.find({ vehicle_name:"Car"})
+        console.log(bike)
+        res.json(bike)
+})
+
+
+
+router.get('/home',authenticate,(req,res)=>{
+    res.send(req.rootUser)
+})
 
 
 

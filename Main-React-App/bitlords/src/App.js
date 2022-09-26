@@ -11,6 +11,8 @@ import {
 } from "react-router-dom";
 import Login from './Components/Login';
 import Signup from './Components/Signup';
+import Bicycle from './Components/Bicycle';
+import Car from './Components/Car';
 
 function App() {
   
@@ -21,6 +23,10 @@ function App() {
     <Route path='/mainpage' element={<Mainpage/>}/>
     <Route path='/home' element={<Home/>}/>
     <Route path='/bike' element={<Bike/>}/>
+    <Route path='/bicycle' element={<Bicycle/>}/>
+    <Route path='/car' element={<Car/>}/>
+
+
     <Route path='/log' element={<Login/>}/>
     <Route path='/sign' element={<Signup/>}/>
 
