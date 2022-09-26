@@ -33,6 +33,9 @@
     .active::before{
         width: 20%;
     }
+    .login .logo-signup img{
+        width: 40%;
+    }
 }
 
 /* // Small devices (landscape phones, less than 768px) */
@@ -55,6 +58,9 @@
     }
     #landing-image{
         width: 100%;
+    }
+    .login .logo-signup img{
+        width: 50%;
     }
 }
 
@@ -95,5 +101,11 @@
     }
     .active::before{
         width: 50%;
+    }
+    .login .logo-signup img{
+        width: 100%;
+    }
+    .main-login{
+        padding: 0;
     }
 }
