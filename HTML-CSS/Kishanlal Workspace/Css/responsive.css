@@ -24,6 +24,15 @@
         margin: auto;
         width: 70%;
     }
+    .nav-link::before{
+        left: 40%;
+    }
+    .nav-link:hover::before{
+        width: 20%;
+    }
+    .active::before{
+        width: 20%;
+    }
 }
 
 /* // Small devices (landscape phones, less than 768px) */
@@ -51,7 +60,7 @@
 
 @media (max-width: 576px) {
     .landing-logo{
-        width: 50%;
+        width: 80%;
         margin-bottom: 20px;
     }
     .landing-nav{
@@ -77,5 +86,14 @@
     }
     #landing-image{
         width: 100%;
+    }
+    .nav-link::before{
+        left: 25%;
+    }
+    .nav-link:hover::before{
+        width: 50%;
+    }
+    .active::before{
+        width: 50%;
     }
 }
