@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Landing page css starts */
+
+.landing-page{
+    background-color: #fed362;
+    height: 100vh;
+}
+
+.landing-main{
+    height: 100vh;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing-logo{
+    width: 20%;
+}
+
+#button-color{
+    background-color: #2b2f33;
+    color: white;
+    margin: 0 20px;
+}
+
+.landing-content{
+    border: none;
+}
+
+.landing-content h1{
+    font-size: 50px;
+    color: #2a2d31;
+}
+
+.landing-content p{
+    font-size: 25px;
+    color: #80808b;
+    font-weight: 450;
+}
+
+.landing-image img{
+    width: 100%;
+}
+
+/* Landing page css ends */
+
+.header{
+    background-color:  #fed362;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+.nav_logo{
+    height: 8vh;
+    margin: 5px;
+}
+
+.nav-item{
+    margin: 0px 20px;
+}
+
+.navbar-light .navbar-toggler {
+    height: 8vh;
+    color: #80808b;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+#navbarSupportedContent ul li a{
+    color: #2b2f33;
+    font-weight: 700;
+    position: relative;
+    font-size: 18px;
+    padding: 3px 15px;
+}
+
+.nav-link::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 0%;
+    height: 4px;
+    background-color: #80808b;
+    transition: all 0.5s linear;
+}
+
+.active::before{
+    width: 100%;
+}
+.active{
+    color: #80808b;
+}
+
+.nav-link:hover::before{
+    width: 100%;
+    background-color: #80808b;
+}
+
+.header .navbar-toggler:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-brand {
+    margin-right: 10px;
+}
+
+.dropdown-menu{
+    background-color: #a9a9a9;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+.navbar-nav .dropdown-menu{
+    margin-top: 15px;
+}
+
+/* navigation style ends */
+
+/* Login page css starts */
+
+.main-login{
+    background-color: #fed362;
+    align-items: center;
+    height: 100vh;
+}
+
+.login{
+    height: 100vh;
+}
+
+.login .logo img{
+    width: 100%;
+}
+
+.login input{
+    background-color: #f5f8fa;
+    border-color: #f5f8fa;
+    color: #5e6278;
+}
+
+.login input:focus{
+    box-shadow: none;
+}
+
+.login .submit_btn{
+    padding: 15px;
+    font-weight: 500;
+}
+
+.login .submit_btn{
+    box-shadow: none;
+}
+
+/* Login page css ends */
