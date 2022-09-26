@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import './responsive.css';
+import './style.css';
 import Mainpage from './Components/Mainpage';
 import Home from'./Components/Home'
 import Bike from './Components/Bike'
@@ -21,7 +23,7 @@ function App() {
    <>
    <Router>   
    <Routes>
-    <Route path='/mainpage' element={<Mainpage/>}/>
+    <Route path='/' element={<Mainpage/>}/>
     <Route path='/home' element={<Home/>}/>
     <Route path='/bike' element={<Bike/>}/>
     <Route path='/bicycle' element={<Bicycle/>}/>
