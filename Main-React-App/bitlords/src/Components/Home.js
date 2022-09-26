@@ -38,6 +38,7 @@ function Home() {
     <div>
       <h1>home</h1>
     <h1>{userData.name}</h1>
+    <img src={userData.file}/>
     </div>
   )
 }

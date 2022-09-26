@@ -8,7 +8,7 @@ const authenticate=require('../Authenticate/authenticate')
 const { json } = require('express')
 const { model } = require('mongoose')
 const { castObject, bulkWrite } = require('../Schema/Signup_schema')
-
+const uplode =require('../Authenticate/Uplode')
 
 const bcrypt = require("bcrypt")
 
@@ -49,11 +49,12 @@ router.post("/car",(req,res)=>{
 
 // regestration of user in the /Signup url
 
-router.post("/signup",(req,res)=>{
+router.post("/signup",uplode.single('image'),(req,res)=>{
     console.log(req.body)
     console.log("signup  page")
 
     const { name,address,age,gender,occupation,phone,gmail,adhar,password,cpassword}=req.body;
+   
 
     if(!name || !address ||!age || !gender ||!occupation ||!phone||!gmail||!adhar||!password||!cpassword){
         return res.status(422).json({error:"fill the data first"})}
@@ -66,6 +67,9 @@ router.post("/signup",(req,res)=>{
             return res.status(425).json({error:"check the password"})
         }else{
             const sign= new Sign({name,address,age,gender,occupation,phone,gmail,adhar,password,cpassword})
+            if(req.image){
+                   sign.image=req.file.path    
+            }
 
             sign.save().then(()=>{
                 res.status(201).json({ messsage: "saved successfully" })
