@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Landing page css starts */
 
 .landing-page{
@@ -130,3 +134,40 @@
 }
 
 /* navigation style ends */
+
+/* Login page css starts */
+
+.main-login{
+    background-color: #fed362;
+    align-items: center;
+    height: 100vh;
+}
+
+.login{
+    height: 100vh;
+}
+
+.login .logo img{
+    width: 100%;
+}
+
+.login input{
+    background-color: #f5f8fa;
+    border-color: #f5f8fa;
+    color: #5e6278;
+}
+
+.login input:focus{
+    box-shadow: none;
+}
+
+.login .submit_btn{
+    padding: 15px;
+    font-weight: 500;
+}
+
+.login .submit_btn{
+    box-shadow: none;
+}
+
+/* Login page css ends */
