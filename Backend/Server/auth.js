@@ -14,6 +14,7 @@ const bcrypt = require("bcrypt")
 
 
 const cookieParser = require('cookie-parser')
+const { find } = require('../Schema/Rent_form')
 app.use(cookieParser())
 
 
@@ -158,7 +159,20 @@ router.get('/home',authenticate,(req,res)=>{
     res.send(req.rootUser)
 })
 
-
+router.post("/bikedel",async(req,res)=>{
+    try {
+        const id = req.body.id;
+        console.log(id)
+        Car.findByIdAndRemove(id,function(err){
+            if(!err){
+              console.log("Successfully deleted the items");
+            //   res.redirect("/");
+            }
+          })
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 
 
