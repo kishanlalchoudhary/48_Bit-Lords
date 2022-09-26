@@ -10,16 +10,19 @@ function Signup() {
     const [worn ,setworn]=useState('*')
     const nevigate=useNavigate();
   let [User,setUser]=useState({
-    name:"",gmail:"",phone:"",password:"",cpassword:"",address:"",age:"",gender:"",occupation:"",adhar:""
+    name:"",gmail:"",phone:"",password:"",cpassword:"",address:"",age:"",gender:"",occupation:"",adhar:"",image:""
   })
   
   
   
-  let name , value
+  let name , value,image
     const  inputHandel =(e)=>{
       console.log(User)
       name=e.target.name;
+     
+
       value=e.target.value;
+      
     
     
       setUser({...User,[name]:value})
