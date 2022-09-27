@@ -1,6 +1,9 @@
 import React from 'react'
 import {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
+
+
+import '../App.css'
 function Login() {
    const [login ,setlogin]=useState("Login")
     let [user,setuser]=useState({
@@ -54,28 +57,15 @@ function Login() {
   }
 
   return (
-    <div>
+    
      
-         {/* <div>
-      
-      <div class="input-group mb-3">
-      <span class="input-group-text">Email Address</span>
-        <input type="email" name='gmail' value={user.gmail} onChange={ inputHandel} width={5}  placeholder="Email"  />
-       
-      </div>
-     <div class="input-group mb-3">
-        <span class="input-group-text">Password</span>
-        <input type="Password"name='password' value={user.password} onChange={ inputHandel} class="form-control" placeholder='Password' aria-label="Amount (to the nearest dollar)" />
-       
-      </div>
-      <button type='submit' onClick={fetchdata} >{login}</button>
-    </div> */}
+         
     <div class="container-fluid main-login">
         <div class="wrapper login d-flex justify-content-center align-items-center">
             <div class="container">
                 <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-lg-4 text-center">
                     <div class="logo">
-                        <img src="/logo.png" alt=""/>
+                        <img src="/logo-color.png" alt=""/>
                     </div>
                     <form action="" class="rounded bg-white shadow p-sm-5 p-3">
                         <h3 class="text-dark fw-bolder fs-4 mb-2">Login to TempTravel</h3>
@@ -101,7 +91,7 @@ function Login() {
         </div>
     </div>
 
-    </div>
+    
   )
 }
 

@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(require("./Server/auth"))
 app.use('/Uplode',express.static('Uplode'))
 app.get("/",(req,res)=>{res.send("this is first srever page")})
-
+require("dotenv").config()
 
 app.listen(5001,()=>{console.log("server is running at port number 5000")})
 

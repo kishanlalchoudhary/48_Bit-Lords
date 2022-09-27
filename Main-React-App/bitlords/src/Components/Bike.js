@@ -4,6 +4,7 @@ import Nev from './Nev'
 import {useDispatch} from 'react-redux'
 import {add} from '../Components/store/Cartslice'
 
+import '../App.css'
 function Bike() {
 
   const dispatch=useDispatch()
@@ -56,19 +57,32 @@ function Bike() {
   return (
     <div>
       <Nev></Nev> 
+      <div class="row row-lg-cols-2  row-cols-1">
       {
         bike.map((item)=>(
-            <div>
-             <div>
-            <h1>{item.owner_name}</h1>
-            <h2>{item.vehicle_name}</h2>
-           
-            <button type = "button" value={item._id} name='id' onClick={()=>{del(item)}}>delete</button>
-            
-           </div>
-           </div>
+          <div class="card mb-3 card-img" >
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="bicycle.png.png" class="img-fluid rounded-start about_image" alt="..." />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Bike</h5>
+                <h3>Vehicle Number : {item.vehicle_no}</h3>
+                <h3>Address :{item.address}</h3>
+                <h3>Amount :Rs.{item.rent}</h3>
+                <h3>Availability start :date {item.start_time}</h3>
+                <h3>Availability end :up to {item.end_time}</h3>
+                <h2>Owner name : {item.owner_name}</h2>
+                <button type="button" className='btn btn-primary' value={item._id} name='id' onClick={() => { del(item) }}>delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
         ))
       }
+      </div>
+
     </div>
   )
 }

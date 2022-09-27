@@ -1,38 +1,510 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Landing page css starts */
+
+.landing-page{
+  background-color: #fed362;
+  height: 100vh;
+}
+
+.landing-main{
+  height: 100vh;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing-logo{
+  width: 20%;
+}
+
+#button-color{
+  background-color: #2b2f33;
+  color: white;
+  margin: 0 20px;
+}
+
+.landing-content{
+  border: none;
+}
+
+.landing-content h1{
+  font-size: 50px;
+  color: #2a2d31;
+}
+
+.landing-content p{
+  font-size: 25px;
+  color: #80808b;
+  font-weight: 450;
+}
+
+.landing-image img{
+  width: 100%;
+}
+
+/* Landing page css ends */
+
+.header{
+  background-color:  #fed362;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+.nav_logo{
+  height: 8vh;
+  margin: 5px;
+}
+
+.nav-item{
+  margin: 0px 20px;
+}
+
+.navbar-light .navbar-toggler {
+  height: 8vh;
+  color: #80808b;
+}
+
+.navbar-nav {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#navbarSupportedContent ul li a{
+  color: #2b2f33;
+  font-weight: 700;
+  position: relative;
+  font-size: 18px;
+  padding: 3px 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-link::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 0%;
+  height: 4px;
+  background-color: #80808b;
+  transition: all 0.5s linear;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.active::before{
+  width: 100%;
+}
+.active{
+  color: #80808b;
+}
+
+.nav-link:hover::before{
+  width: 100%;
+  background-color: #80808b;
+}
+
+.header .navbar-toggler:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-brand {
+  margin-right: 10px;
+}
+
+.dropdown-menu{
+  background-color: #a9a9a9;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 100px;
+}
+
+.navbar-nav .dropdown-menu{
+  margin-top: 15px;
+}
+
+/* navigation style ends */
+
+/* Login page css starts */
+
+.main-login{
+  background-color: #fed362;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+}
+
+.main-signup{
+  background-color: #fed362;
+  align-items: center;
+  height: auto;
+}
+
+.login{
+  height: 100vh;
+}
+
+.signup{
+  height: auto;
+}
+
+label {
+  text-align: center;
+}
+
+.login .logo img{
+  width: 100%;
+}
+
+.login .logo-signup img{
+  width: 30%;
+}
+
+.login input{
+  background-color: #f5f8fa;
+  border-color: #f5f8fa;
+  color: #5e6278;
+}
+
+.login input:focus{
+  box-shadow: none;
+}
+
+.login .submit_btn{
+  padding: 15px;
+  font-weight: 500;
+}
+
+.login .submit_btn{
+  box-shadow: none;
+}
+
+.login .password-info{
+  font-size: 10px;
+}
+
+.tw{
+  min-width: 200px;
+  text-align: start;
+}
+
+/* Login page css ends */
+
+/* Testimonials css starts */
+
+.testimonial
+{
+  padding: 30px;
+}
+.small-container
+{
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-bottom: 10px;
+}
+.testrow
+{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.testimonial .testcol
+{
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.testimonial .testcol img{
+  width: 50px;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+.testimonial .testcol:hover
+{
+  transform:translateY(-10px);
+}
+.testcol
+{
+  font-size: 16px;
+  margin: 12px 0;
+  color: #004705;
+  flex-basis: 30%;
+  min-width: 250px;
+  margin-bottom: 30 px;
+}
+.testimonial .testcol h3{
+  font-weight: 600;
+  color: #000000;
+  font-size: 16px;
+}
+.testimonial .testcol p{
+  font-weight: 480;
+  color: #183153;
+}
+
+.testimonial .small-container{
+  max-width: none;
+}
+
+/* Testimonials css ends */
+
+/* Newsletters css starts */
+
+.section-p1{
+  padding: 40px 80px;
+}
+
+#newsletter{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(254, 211, 98,0.8);
+}
+
+#newsletter h4{
+  font-size: 28px;
+  font-weight: 700;
+  color: #2b2f33;
+}
+
+#newsletter p{
+  font-size: 18px;
+  font-weight: 600;
+  color: #5e6278;
+}
+
+#newsletter .form{
+  display: flex;
+  width: 40%;
+}
+
+#newsletter input{
+  height: 3.125em;
+  padding: 0 1.25em;
+  font-size: 15px;
+  width: 100%;
+  border: 1px solid #2b2f33;
+  color: #5e6278;
+  border-radius: 5px;
+  outline: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#newsletter button{
+  border: none;
+  padding: 11px 18px;
+  background-color: #2b2f33;
   color: white;
+  white-space: nowrap;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* Newsletters css ends*/
+
+/* Footer Css starts */
+
+.footer{
+  background-color: #2b2f33;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Footer Css ends */
+/* Contact us css starts */
+
+.contact-content input{
+  background-color: #f5f8fa;
+  border-color: #f5f8fa;
+  color: #5e6278;
+}
+
+.contact-content textarea{
+  background-color: #f5f8fa;
+  border-color: #f5f8fa;
+  color: #5e6278;
+}
+
+.contact-content input:focus{
+  box-shadow: none;
+}
+
+/* Contact us css ends */
+
+
+
+
+/* About section CSS */
+
+.about-image{
+  display: flex;
+  align-items: center;
+  height: 69vh;
+}
+
+.about-content p{
+  font-size: larger;
+}
+
+.card-img{
+  max-width: 540px;
+}
+
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1200px) {
+  .landing-logo{
+      width: 30%;
   }
-  to {
-    transform: rotate(360deg);
+  .landing-content{
+      padding: 20px 0;
+  }
+  .landing-content h1{
+      font-size: 42px;
+  }
+  .landing-content p{
+      font-size: larger;
+      margin-bottom: 0;
+  }
+  #newsletter .form{
+      width: 35%;
+  }
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 992px) {
+  .landing-logo{
+      width: 30%;
+  }
+  #landing-image{
+      margin: auto;
+      width: 70%;
+  }
+  .nav-link::before{
+      left: 40%;
+  }
+  .nav-link:hover::before{
+      width: 20%;
+  }
+  .active::before{
+      width: 20%;
+  }
+  .login .logo-signup img{
+      width: 40%;
+  }
+  #newsletter .form{
+      width: 60%;
+  }
+  .about-image{
+      height: 50vh;
+  }
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 768px) {
+  .landing-logo{
+      width: 40%;
+  }
+  .landing-content{
+      padding: 20px 0;
+  }
+  .landing-content h1{
+      font-size: 42px;
+  }
+  .landing-content p{
+      font-size: larger;
+      margin-bottom: 0;
+  }
+  .landing-image img{
+      width: 90%;
+  }
+  #landing-image{
+      width: 100%;
+  }
+  .login .logo-signup img{
+      width: 50%;
+  }
+  #newsletter .form{
+      width: 70%;
+  }
+  .about-image{
+      width: 80vw;
+      height: 50vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing-logo{
+      width: 80%;
+      margin-bottom: 20px;
+  }
+  .landing-nav{
+      flex-direction: column;
+  }
+  .landing-btn{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+  }
+  .landing-content{
+      padding-top: 16px;
+  }
+  .landing-content h1{
+      font-size: xx-large;
+  }
+  .landing-content p{
+      font-size: large;
+      margin-bottom: 0;
+  }
+  .landing-image img{
+      width: 100%;
+  }
+  #landing-image{
+      width: 100%;
+  }
+  .nav-link::before{
+      left: 25%;
+  }
+  .nav-link:hover::before{
+      width: 50%;
+  }
+  .active::before{
+      width: 50%;
+  }
+  .login .logo-signup img{
+      width: 100%;
+  }
+  .main-login{
+      padding: 0;
+  }
+  .section-p1{
+      padding: 40px 30px;
+      padding-bottom: 0px;
+  }
+  #newsletter .form{
+      width: 100%;
+      padding-bottom: 40px;
+      flex-direction: column;
+  }
+  .about-image{
+      width: 100vw;
+      height: 35vh;
   }
 }

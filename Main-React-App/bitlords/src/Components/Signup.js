@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+import '../App.css'
 
 
 
@@ -140,7 +141,7 @@ function Signup() {
             <div className="text-center">
               <form action="" className="rounded bg-white shadow p-sm-3 p-3">
                 <div className="logo-signup">
-                  <img src="Images\logo-color.png" alt="" />
+                  <img src="logo-color.png" alt="" />
                 </div>
                 <h3 className="text-dark fw-bolder fs-4 mb-2">Create an Account</h3>
                 <div className="fw-normal text-muted mb-4">
@@ -148,9 +149,9 @@ function Signup() {
                 </div>
                 <div className="row row-cols-lg-2 row-cols-1">
 
-                  <div className="form-floating mb-3">
+                  <div className="form-floating mb-3 w-100">
                     <input type="text" name="name" value={value} onChange={inputHandel} className="form-control" id="floatingFirstName" placeholder="name@example.com" />
-                    <label for="floatingFirstName" className="tw px-4">First Name</label>
+                    <label for="floatingFirstName" className="tw px-4">Name</label>
                   </div>
                   {/* <div className="form-floating mb-3">
                                 <input type="text"  name="name" value={value} onChange={inputHandel} className="form-control" id="floatingLastName" placeholder="name@example.com" />
@@ -161,7 +162,7 @@ function Signup() {
                     <label for="floatingAge" className="tw px-4">Age</label>
                   </div>
                   <div className="form-floating mb-3 d-flex align-items-center flex-lg-row flex-column">
-                    <span className="px-4">Gender</span>
+                    
                     {/* <div className="gender">
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="radio" name="gender" value={value} onChange={inputHandel} id="inlineRadio1"  />
@@ -176,10 +177,11 @@ function Signup() {
                                         <label className="form-check-label" for="inlineRadio2">Other</label>
                                     </div>
                                 </div> */}
-                    <div className="input-group mb-3">
-                      <span className="input-group-text">Gender</span>
-                      <input type="text" name="gender" value={value} onChange={inputHandel} className="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" />
+                    <div className="form-floating mb-3">
+                    <input type="text" name="gender" value={value} onChange={inputHandel} className="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" />
+                    <label for="floatingAge" className="tw px-4">Gender</label>
                     </div>
+
                   </div>
                   <div className="form-floating mb-3">
                     <input type="number" name='phone' value={value} onChange={inputHandel} className="form-control" id="floatingPhoneNumber" placeholder="Mobile" />

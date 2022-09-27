@@ -9,7 +9,9 @@ const { json } = require('express')
 const { model } = require('mongoose')
 const { castObject, bulkWrite } = require('../Schema/Signup_schema')
 const uplode =require('../Authenticate/Uplode')
-const client=require('twilio')('ACbd0ef1c07ab448f0651e82d5355930e6','c1bcf81aee7321598e9e86fb00dd4a86')
+
+const client=require('twilio')('ACbd0ef1c07ab448f0651e82d5355930e6','66932defdbc1e50d52d24d2eba1c1226')
+
 
 const bcrypt = require("bcrypt")
 

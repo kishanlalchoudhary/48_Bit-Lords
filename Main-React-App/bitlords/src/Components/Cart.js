@@ -46,9 +46,21 @@ function Cart() {
       {
         data.map((item)=>(
             <div>
-            <h1>{item.owner_name}</h1>
-            <h2>{item.rent}</h2>
-            
+               <div class="card mb-3 card-img" >
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="bicycle.png.png" class="img-fluid rounded-start about_image" alt="..." />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Car</h5>
+                <h3>Vehicle Number : {item.vehicle_no}</h3>
+                <h3>Address :{item.address}</h3>
+                <h3>Amount :Rs.{item.rent}</h3>
+                <h3>Availability start :date {item.start_time}</h3>
+                <h3>Availability end :up to {item.end_time}</h3>
+                <h2>Owner name : {item.owner_name}</h2>
+                <h3>to confirm  your booking of vehicle  please enter your email address</h3>
             <input type="email" name='gmail' value={item_id.gmail} onChange={(e)=>{
                setitem_id({...item_id,id:item.gmail,gmail:e.target.value})
             }}></input>
@@ -56,6 +68,11 @@ function Cart() {
             <button type = "button" value={item._id} name='id' onClick={()=>{book(item)}}>delete</button>
         
             </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          
         ))
       }
     </div>

@@ -1,6 +1,5 @@
 import './App.css';
-import './responsive.css';
-import './style.css';
+
 import Mainpage from './Components/Mainpage';
 import Home from'./Components/Home'
 import Bike from './Components/Bike'
@@ -17,7 +16,8 @@ import Car from './Components/Car';
 import Carform from './Components/Carform';
 import Nev from './Components/Nev';
 import Cart from './Components/Cart';
-
+import About from './Components/About';
+import Contact from './Components/Contact';
 function App() {
   
   return (
@@ -33,7 +33,11 @@ function App() {
     <Route path='/log' element={<Login/>}/>
     <Route path='/sign' element={<Signup/>}/>
     <Route path='/carform' element={<Carform/>}/>
-    <Route path='/cart' element={<Cart/>}/>
+    <Route path='/contact' element={<Cart/>}/>
+    <Route path='/about' element={<About/>}/>
+    {/* <Route path='/contact' element={</>}/> */}
+
+
 
    </Routes>
    </Router>
