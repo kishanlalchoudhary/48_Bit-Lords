@@ -16,7 +16,7 @@ function Cart() {
     const dispatch = useDispatch()
     const data = useSelector((state) => state.cart)
     const book=(item)=>{
-
+        alert("car has been booked")
       
 
         const {id,gmail}=item_id
@@ -42,7 +42,10 @@ function Cart() {
   return (
     <div>
         <Nev></Nev> 
-        <h1>cart</h1>
+        
+        <h1>The car you have selecte is</h1>
+        <h3>To confirm  your booking of vehicle  please enter your email address</h3>
+        <div class="row row-lg-cols-2  row-cols-1">
       {
         data.map((item)=>(
            <div>
@@ -59,12 +62,12 @@ function Cart() {
                     <h5 class="card-title">Availability start :date {item.start_time}</h5>
                     <h5 class="card-title">Availability end :up to {item.end_time}</h5>
                     <h5 class="card-title">Owner name : {item.owner_name}</h5>
-                <h3>to confirm  your booking of vehicle  please enter your email address</h3>
-            <input type="email" name='gmail' value={item_id.gmail} onChange={(e)=>{
+                
+            <input type="email" name='gmail' placeholder="name@example.com" class="form-control" value={item_id.gmail} onChange={(e)=>{
                setitem_id({...item_id,id:item.gmail,gmail:e.target.value})
             }}></input>
             
-            <button type = "button" value={item._id} name='id' onClick={()=>{book(item)}}>delete</button>
+            <button type = "button" class='btn btn-primary' value={item._id} name='id' onClick={()=>{book(item)}}>Confirm</button>
         
             </div>
               </div>
@@ -74,6 +77,9 @@ function Cart() {
           
         ))
       }
+      </div>
+
+      
     </div>
   )
 }
