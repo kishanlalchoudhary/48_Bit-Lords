@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TempTravel</title>
+
+    <!-- Bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome 5 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <!-- Css file link -->
+    <link rel="stylesheet" href="Css\style.css">
+    <link rel="stylesheet" href="Css\responsive.css">
+
+</head>
+
+    <!-- Navbar section start -->
+    <header id="full_nav" class="sticky-top">
+        <div class="header">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="Images\logo.png" class="nav_logo" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-sharp fa-solid fa-bars-staggered"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item dropdown me-lg-5">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Vehicle
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="bicycle.html">Bicycle</a></li>
+                                    <li><a class="dropdown-item" href="scooter.html">Scooter</a></li>
+                                    <li><a class="dropdown-item" href="bike.html">Bike</a></li>
+                                    <li><a class="dropdown-item" href="car.html">Car</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Navbar section ends -->
+
+<!-- Signup page starts  -->
+<div class="container-fluid main-login main-signup">
+    <div class="wrapper login signup d-flex justify-content-center align-items-center">
+        <div class="container-md">
+            <div class="text-center">
+                <form action="" class="rounded bg-white shadow p-sm-3 p-3">
+                    <h3 class="text-dark fw-bolder fs-2 mb-4">Vehicle Registration Form</h3>
+                    <div class="row row-cols-lg-2 row-cols-1">
+
+                        <div class="form-floating mb-3 w-100">
+                            <input type="text" class="form-control" id="floatingFirstName"
+                                placeholder="name@example.com">
+                            <label for="floatingFirstName" class="tw px-4">First Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingAge" placeholder="name@example.com">
+                            <label for="floatingAge" class="tw px-4">Car / Bike / Bicycle</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="floatingPhoneNumber"
+                                placeholder="name@example.com">
+                            <label for="floatingPhoneNumber" class="tw px-4">Vehicle Number</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="floatingPhoneNumber"
+                                placeholder="name@example.com">
+                            <label for="floatingPhoneNumber" class="tw px-4">Amount</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput" class="tw px-4">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput" class="tw px-4">Start Duration</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput" class="tw px-4">End Duration</label>
+                        </div>
+
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Pickup Address</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                            <label class="form-check-label ms-2 " for="gridCheck">
+                                I Agree <a href="#">Terms and conditions</a>.
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit_btn w-50 my-4">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Signup page ends  -->
+
+<!-- Footer section starts -->
+
+<section class="footer">
+    Copyright &copy TempTravel
+</section>
+
+<!-- Footer section ends -->
+
+<!-- Main page ends -->
+
+<!-- Boostrap Script link -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
