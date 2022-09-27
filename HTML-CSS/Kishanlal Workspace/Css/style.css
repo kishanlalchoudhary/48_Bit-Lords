@@ -198,3 +198,146 @@ label {
 }
 
 /* Login page css ends */
+
+/* Testimonials css starts */
+
+.testimonial
+{
+    padding: 30px;
+}
+.small-container
+{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 10px;
+}
+.testrow
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.testimonial .testcol
+{
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.testimonial .testcol img{
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+.testimonial .testcol:hover
+{
+    transform:translateY(-10px);
+}
+.testcol
+{
+    font-size: 16px;
+    margin: 12px 0;
+    color: #004705;
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30 px;
+}
+.testimonial .testcol h3{
+    font-weight: 600;
+    color: #000000;
+    font-size: 16px;
+}
+.testimonial .testcol p{
+    font-weight: 480;
+    color: #183153;
+}
+
+.testimonial .small-container{
+    max-width: none;
+}
+
+/* Testimonials css ends */
+
+/* Newsletters css starts */
+
+.section-p1{
+    padding: 40px 80px;
+}
+
+#newsletter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(254, 211, 98,0.8);
+}
+
+#newsletter h4{
+    font-size: 28px;
+    font-weight: 700;
+    color: #2b2f33;
+}
+
+#newsletter p{
+    font-size: 18px;
+    font-weight: 600;
+    color: #5e6278;
+}
+
+#newsletter .form{
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input{
+    height: 3.125em;
+    padding: 0 1.25em;
+    font-size: 15px;
+    width: 100%;
+    border: 1px solid #2b2f33;
+    color: #5e6278;
+    border-radius: 5px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#newsletter button{
+    border: none;
+    padding: 11px 18px;
+    background-color: #2b2f33;
+    color: white;
+    white-space: nowrap;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Newsletters css ends*/
+
+/* Footer Css starts */
+
+.footer{
+    background-color: #2b2f33;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Footer Css ends */
+
+/* About section CSS */
+
+.about-image{
+    display: flex;
+    align-items: center;
+    height: 67vh;
+}
+
+.about-content p{
+    font-size: larger;
+}

@@ -13,6 +13,9 @@
         font-size: larger;
         margin-bottom: 0;
     }
+    #newsletter .form{
+        width: 35%;
+    }
 }
 
 /* // Medium devices (tablets, less than 992px) */
@@ -35,6 +38,12 @@
     }
     .login .logo-signup img{
         width: 40%;
+    }
+    #newsletter .form{
+        width: 60%;
+    }
+    .about-image{
+        height: 50vh;
     }
 }
 
@@ -61,6 +70,13 @@
     }
     .login .logo-signup img{
         width: 50%;
+    }
+    #newsletter .form{
+        width: 70%;
+    }
+    .about-image{
+        width: 80vw;
+        height: 50vh;
     }
 }
 
@@ -107,5 +123,18 @@
     }
     .main-login{
         padding: 0;
+    }
+    .section-p1{
+        padding: 40px 30px;
+        padding-bottom: 0px;
+    }
+    #newsletter .form{
+        width: 100%;
+        padding-bottom: 40px;
+        flex-direction: column;
+    }
+    .about-image{
+        width: 100vw;
+        height: 35vh;
     }
 }
