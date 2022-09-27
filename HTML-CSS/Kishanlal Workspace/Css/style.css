@@ -363,3 +363,8 @@ label {
 }
 
 /* Contact us css ends */
+
+.about_image{
+    min-height: 100%;
+    max-height: 280px;
+}
