@@ -341,3 +341,25 @@ label {
 .about-content p{
     font-size: larger;
 }
+
+/* About us css ends */
+
+/* Contact us css starts */
+
+.contact-content input{
+    background-color: #f5f8fa;
+    border-color: #f5f8fa;
+    color: #5e6278;
+}
+
+.contact-content textarea{
+    background-color: #f5f8fa;
+    border-color: #f5f8fa;
+    color: #5e6278;
+}
+
+.contact-content input:focus{
+    box-shadow: none;
+}
+
+/* Contact us css ends */
