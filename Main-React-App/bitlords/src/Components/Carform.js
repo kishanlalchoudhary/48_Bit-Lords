@@ -1,13 +1,13 @@
 import React from 'react'
 import {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
-
+import Nev from './Nev'
 
 function Carform() {
 
     let [User,setUser]=useState({
     start_time: {
-        owner_name:"",vehicle_name:"",vehicle_no:"",start_time:"",end_time:"",address:"",rent:""
+        owner_name:"",vehicle_name:"",vehicle_no:"",start_time:"",end_time:"",address:"",rent:"",gmail:""
       }})
     
   let name , value
@@ -23,7 +23,7 @@ function Carform() {
   
   const carfetchdata= async(e)=>{
     e.preventDefault()
-    const {owner_name,vehicle_name,vehicle_no,start_time,end_time,address,rent}=User
+    const {owner_name,vehicle_name,vehicle_no,start_time,end_time,address,rent,gmail}=User
    const res=await fetch('/car',{
     method:'POST',
     headers:{
@@ -31,7 +31,7 @@ function Carform() {
     }
     ,
     body:JSON.stringify({
-        owner_name,vehicle_name,vehicle_no,start_time,end_time,address,rent
+        owner_name,vehicle_name,vehicle_no,start_time,end_time,address,rent,gmail
     })
   
    });
@@ -59,6 +59,7 @@ function Carform() {
     
   return (
     <div>
+      <Nev></Nev> 
         <h1>car form</h1>
        <form  method='POST'>
       <div class="input-group mb-3">
@@ -101,7 +102,11 @@ function Carform() {
       <span class="input-group-text">Address</span>
       <input type="text"  name="address" value={value} onChange={carinput} class="form-control" placeholder="Name" aria-label="carUsername" aria-describedby="basic-addon1" />
       </div>
-
+      <div class="input-group mb-3">
+        <span class="input-group-text">Gmail</span>
+        <input type="text" name='gmail' value={value}onChange={carinput} class="form-control" placeholder='Confirm the password' aria-label="Amount (to the nearest dollar)" />
+       
+      </div>
      
       <button type='Submit' onClick={carfetchdata}> Submit</button>
    

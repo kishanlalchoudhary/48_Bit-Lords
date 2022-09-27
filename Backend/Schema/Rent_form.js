@@ -30,6 +30,10 @@ const lenderSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    gmail:{
+      type:String,
+      required:true
+    }
   });
 
   const Car=mongoose.model("CARFORM",lenderSchema )

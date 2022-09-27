@@ -9,11 +9,13 @@ const { json } = require('express')
 const { model } = require('mongoose')
 const { castObject, bulkWrite } = require('../Schema/Signup_schema')
 const uplode =require('../Authenticate/Uplode')
+const client=require('twilio')('ACbd0ef1c07ab448f0651e82d5355930e6','c1bcf81aee7321598e9e86fb00dd4a86')
 
 const bcrypt = require("bcrypt")
 
 
 const cookieParser = require('cookie-parser')
+const { find } = require('../Schema/Rent_form')
 app.use(cookieParser())
 
 
@@ -25,12 +27,12 @@ app.use(cookieParser())
 router.post("/car",(req,res)=>{
     console.log(req.body)
     console.log("Car details")
-    const {owner_name,vehicle_name,vehicle_no, start_time,end_time,rent,address}=req.body;
-    if(!owner_name||!vehicle_name||!start_time||!vehicle_no||!end_time||!rent||!address){
+    const {owner_name,vehicle_name,vehicle_no, start_time,end_time,rent,address,gmail}=req.body;
+    if(!owner_name||!vehicle_name||!start_time||!vehicle_no||!end_time||!rent||!address||!gmail){
         res.status(422).json({err:"fill the data first"})
     }
     else{ 
-        const car=new Car({owner_name,vehicle_name,vehicle_no, start_time,end_time,rent,address})
+        const car=new Car({owner_name,vehicle_name,vehicle_no, start_time,end_time,rent,address,gmail})
         Sign.findOne({name:owner_name,function(err,found){
             found.carform.push(car);
             found.save();
@@ -56,7 +58,7 @@ router.post("/signup",uplode.single('image'),(req,res)=>{
     const { name,address,age,gender,occupation,phone,gmail,adhar,password,cpassword}=req.body;
     
 
-    if(!name || !address ||!age || !gender ||!occupation ||!phone||!gmail||!adhar||!password||!cpassword){
+    if(!name || !address ||!age||!occupation ||!phone||!gmail||!adhar||!password||!cpassword){
         return res.status(422).json({error:"fill the data first"})}
     
     Sign.findOne({gmail:gmail}).then((user)=>{
@@ -148,7 +150,7 @@ router.get("/bicycle",async(req,res)=>{
 
 router.get("/carshow",async(req,res)=>{
     const bike= await Car.find({ vehicle_name:"Car"})
-        console.log(bike)
+       
         res.json(bike)
 })
 
@@ -158,8 +160,86 @@ router.get('/home',authenticate,(req,res)=>{
     res.send(req.rootUser)
 })
 
+router.post("/cardel",async(req,res)=>{
+   const {id} =req.body
+    console.log(req.body)
+    console.log(id)
+   Car.findByIdAndRemove(id, (err)=>{
+        if(!err){
+            console.log("deleted")
+            
+        }else{
+            console.log(err)
+        }
+    }
+    )
+   
+})
+
+router.post("/bikedel",async(req,res)=>{
+    const {id} =req.body
+     console.log(req.body)
+     console.log(id)
+    Car.findByIdAndRemove(id, (err)=>{
+         if(!err){
+             console.log("deleted")
+             
+         }else{
+             console.log(err)
+         }
+     }
+     )
+    
+ })
+ router.post("/bicdel",async(req,res)=>{
+    const {id} =req.body
+     console.log(req.body)
+     console.log(id)
+    Car.findByIdAndRemove(id, (err)=>{
+         if(!err){
+             console.log("deleted")
+             
+         }else{
+             console.log(err)
+         }
+     }
+     )
+    
+ })
+ 
+
+ router.post("/message",async(req,res)=>{
+       const {id,gmail}=req.body
+       console.log(req.body)
+       const renter = await Sign.findOne({gmail:gmail})
+       const owner = await Sign.findOne({gmail:id})
+       console.log(renter)
+       console.log(owner)
+      
+       
+       
+    client.messages
+    .create({
+       body:  `1 you have booked the vehicle  please check the owner name :${owner.name} ,phone number :${owner.phone} ,pickup point :${owner.address}`,
+       from: '+19124913337',
+       to:  `+91${renter.phone}`
+     }
+    )
+    .then(message => console.log(message.sid));
+
+client.messages
+    .create(
+     {
+        body:  `2 your vehicle has been booked by  name :${renter.name} phone :${renter.phone} occupation :${owner.occupation}`,
+        from: '+19124913337',
+        to:  `+91${owner.phone}`
+      })
+    .then(message => console.log(message.sid));
 
 
+    
+    res.send("message sent")
+ })
 
 
 module.exports = router

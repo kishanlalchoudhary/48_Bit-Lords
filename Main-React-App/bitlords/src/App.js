@@ -16,12 +16,14 @@ import Bicycle from './Components/Bicycle';
 import Car from './Components/Car';
 import Carform from './Components/Carform';
 import Nev from './Components/Nev';
+import Cart from './Components/Cart';
 
 function App() {
   
   return (
    <>
-   <Router>   
+   <Router>  
+   
    <Routes>
     <Route path='/' element={<Mainpage/>}/>
     <Route path='/home' element={<Home/>}/>
@@ -31,9 +33,11 @@ function App() {
     <Route path='/log' element={<Login/>}/>
     <Route path='/sign' element={<Signup/>}/>
     <Route path='/carform' element={<Carform/>}/>
+    <Route path='/cart' element={<Cart/>}/>
+
    </Routes>
    </Router>
-   <Nev></Nev>
+   
    </>
   );
 }
