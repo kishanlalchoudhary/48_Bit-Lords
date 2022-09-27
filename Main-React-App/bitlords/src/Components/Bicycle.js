@@ -65,7 +65,7 @@ function Bicycle() {
         {
           Bicycle.map((item) => (
 
-            <div class="card mb-3 card-img" >
+            <div class="card mb-3 card-img mx-3" >
               <div class="row g-0">
                 <div class="col-md-4">
                   <img src="bicycle.png.png" class="img-fluid rounded-start about_image" alt="..." />
@@ -79,7 +79,7 @@ function Bicycle() {
                     <h5 class="card-title">Availability start :date {item.start_time}</h5>
                     <h5 class="card-title">Availability end :up to {item.end_time}</h5>
                     <h5 class="card-title">Owner name : {item.owner_name}</h5>
-                    <button type="button" className='btn btn-primary' value={item._id} name='id' onClick={() => { del(item) }}>delete</button>
+                    <button type="button" className='btn btn-primary' value={item._id} name='id' onClick={() => { del(item) }}>Book</button>
                   </div>
                 </div>
               </div>

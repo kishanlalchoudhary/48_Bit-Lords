@@ -33,9 +33,9 @@ function App() {
     <Route path='/log' element={<Login/>}/>
     <Route path='/sign' element={<Signup/>}/>
     <Route path='/carform' element={<Carform/>}/>
-    <Route path='/contact' element={<Cart/>}/>
+    <Route path='/cart' element={<Cart/>}/>
     <Route path='/about' element={<About/>}/>
-    {/* <Route path='/contact' element={</>}/> */}
+    <Route path='/contact' element={<Contact/>}/>
 
 
 

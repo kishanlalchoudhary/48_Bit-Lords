@@ -57,7 +57,7 @@ function Car() {
       <div class="row row-lg-cols-2  row-cols-1">
       {
         Car.map((item)=>(
-          <div class="card mb-3 card-img" >
+          <div class="card mb-3 card-img mx-3" >
           <div class="row g-0">
             <div class="col-md-4">
               <img src="bicycle.png.png" class="img-fluid rounded-start about_image" alt="..." />
@@ -65,13 +65,12 @@ function Car() {
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title">Car</h5>
-                <h3>Vehicle Number : {item.vehicle_no}</h3>
-                <h3>Address :{item.address}</h3>
-                <h3>Amount :Rs.{item.rent}</h3>
-                <h3>Availability start :date {item.start_time}</h3>
-                <h3>Availability end :up to {item.end_time}</h3>
-                <h2>Owner name : {item.owner_name}</h2>
-                <button type="button" className='btn btn-primary' value={item._id} name='id' onClick={() => { del(item) }}>delete</button>
+                <h5 class="card-title">Address :{item.address}</h5>
+                    <h5 class="card-title">Amount :Rs.{item.rent}</h5>
+                    <h5 class="card-title">Availability start :date {item.start_time}</h5>
+                    <h5 class="card-title">Availability end :up to {item.end_time}</h5>
+                    <h5 class="card-title">Owner name : {item.owner_name}</h5>
+                <button type="button" className='btn btn-primary' value={item._id} name='id' onClick={() => { del(item) }}>Book</button>
               </div>
             </div>
           </div>

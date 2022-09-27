@@ -37,6 +37,8 @@ function Nev() {
                                     <li><Link className="dropdown-item" to="/bicycle">Bicycle</Link></li>
                                     <li><Link className="dropdown-item" to="/bike">Bike</Link></li>
                                     <li><Link className="dropdown-item" to="/car">Car</Link></li>
+                                    <li><Link className="dropdown-item" to="/cart">your Bookings</Link></li>
+
                                 </ul>
                             </li>
                         </ul>
